@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Data from './mobx/data';
+import './mobx/iss_data_producer';
+import './mobx/random_data_producer';
+
+window.data = Data;
+window.data.setHeaders(['lat', 'long']);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +16,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
